@@ -3,10 +3,10 @@
     "",
     "\\API",
     "\\API\\Controllers",
-    "\\API\\Data",
-    "\\API\\Data\\Migrations",
-    "\\API\\Entities",
-    "\\API\\obj"
+    "\\API\\Properties",
+    "\\Core",
+    "\\Core\\Interfaces",
+    "\\Infrastructure"
   ],
   "SelectedNode": "\\skinet.sln",
   "PreviewInSolutionExplorer": false
