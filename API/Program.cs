@@ -1,3 +1,4 @@
+using API.Helpers;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,9 @@ public class WebApp
 
         // Add services to the container.
 
-        builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        //builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        builder.Services.AddAutoMapper(typeof(MappingProfiles));
         builder.Services.AddControllers();
         builder.Services.AddDbContext<StoreContext>(x =>
             x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -46,6 +49,9 @@ public class WebApp
             }
         }
         app.UseHttpsRedirection();
+
+        app.UseRouting();
+        app.UseStaticFiles();
 
         app.UseAuthorization();
 
