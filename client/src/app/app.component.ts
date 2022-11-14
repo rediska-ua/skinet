@@ -1,6 +1,7 @@
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {IProduct} from "./shared/models/product";
+import {IPagination} from "./shared/models/pagination";
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Skinet';
-  private apiUrl = 'https://localhost:7113/api/';
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor() { }
   ngOnInit(): void {
-    console.log(this.http.get(this.apiUrl + 'products'))
+
   }
 
 }
