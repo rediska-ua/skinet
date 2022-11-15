@@ -32,6 +32,7 @@ public class ProductsController : BaseApiController
     public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
         [FromQuery]ProductSpecParams productParams)
     {
+        Console.WriteLine("Query: " + productParams.ToString());
         var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
         var countSpec = new ProductWithFiltersForCountSpecification(productParams);
         var totalItems = await _productRepo.CountAsync(countSpec);

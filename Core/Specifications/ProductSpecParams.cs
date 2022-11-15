@@ -28,4 +28,10 @@ public class ProductSpecParams
         get => _search;
         set => _search = value.ToLower();
     }
+
+    public override string ToString()
+    {
+        return PageIndex.ToString() + PageSize.ToString() + "BRAND: " + BrandId.ToString() +
+            "tYPEEE: " + TypeId.ToString();
+    }
 }
