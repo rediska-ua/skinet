@@ -2,7 +2,7 @@
   <div class="row">
     <section class="col-3">
       <h5 class="text-warning ml-3">Sort</h5>
-      <select class="form-select mb-3" (change)="onSortSelected($event.target.value)">
+      <select class="form-select mb-3" (change)="onSortSelected($event)">
         <option *ngFor="let sort of sortOptions"
           [value]="sort.value"
         >{{sort.name}}</option>
