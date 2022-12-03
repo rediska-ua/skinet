@@ -6,8 +6,6 @@ import {IBrand} from "../shared/models/brand";
 import {IProductType} from "../shared/models/productType";
 import {ShopParams} from "../shared/models/shopParams";
 
-
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
