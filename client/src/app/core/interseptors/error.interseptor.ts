@@ -30,7 +30,7 @@ export class ErrorInterseptor implements HttpInterceptor {
           }
           if (err.status === 500) {
             const navigationExtras: NavigationExtras = {state: {err: err.error}};
-            this.router.navigateByUrl('/server-error');
+            this.router.navigateByUrl('/server-error', navigationExtras);
           }
         }
         return throwError(err);

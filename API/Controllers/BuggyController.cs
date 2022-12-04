@@ -29,16 +29,14 @@ public class BuggyController : BaseApiController
     [HttpGet("servererror")]
     public ActionResult GetServerErrorRequest()
     {
-        var thing = _context.Products.Find(43);
-
         try
         {
-            var thingToString = thing.ToString();
-        } 
-        catch (Exception ex)
+            var thing = _context.Products.Find(42);
+            var res = thing.ToString();
+
+        } catch (Exception ex)
         {
-            Console.WriteLine(ex);
-            return StatusCode(500);
+            return StatusCode(500, ex.StackTrace);
         }
 
         return Ok();

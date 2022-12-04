@@ -1,3 +1,11 @@
 <div class="container">
-  <h1>Server Error</h1>
+  <h4>Internal Server Error - refreshing the page will make the exception disappear</h4>
+  <ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error}}</h5>
+    <p class="font-weight-bold">Note: if you are seeing this then Angular is probably not responsible</p>
+    <p class="font-weight-bold">What to do next?</p>
+    <ol>
+      <li>This is API error</li>
+    </ol>
+  </ng-container>
 </div>
