@@ -15,7 +15,7 @@ export class ShopService {
 
   constructor(private http: HttpClient) { }
 
-    getProducts(shopParams: ShopParams): Observable<IPagination> {
+  getProducts(shopParams: ShopParams): Observable<IPagination> {
     let queryParams = new HttpParams();
 
     if (shopParams.brandId !== 0) {
@@ -37,6 +37,10 @@ export class ShopService {
     console.log(queryParams.toString());
 
     return this.http.get<IPagination>(this.apiUrl + "products", { params: queryParams });
+  }
+
+  getProduct(id: number): Observable<IProduct>{
+    return this.http.get<IProduct>(this.apiUrl + `products/${id}`);
   }
 
   getBrands(): Observable<IBrand[]> {
